@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheet/style.css">
+    <link rel="stylesheet" href="./stylesheet/style.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>backend project</title>
 </head>
@@ -23,7 +23,13 @@
             <% if(files.length > 0) { %>
                 <% files.forEach(function(val) { %>
                     <div class="task  w-72 px-3 py-4 rounded-md bg-zinc-700 ">
-                        <h1 class="text-white text-3xl tracking-tighter"> <%= val %></h1>
+                        <div class="task  flex justify-between">
+                            <h1 class="text-white text-3xl tracking-tighter"> <%= val %></h1>
+                            <a href="/delete/<%=val %>">
+                                <!-- <img src="./public/images/delete.png" alt="a image"> --> delete
+                            </a>
+                        </div>
+                       
                         <div class="flex w-full justify-between items-center mt-3">
                             <a class="text-blue-500" href="/file/<%=val %>">Read More.</a>
                             <a  class="text-zinc-300" href="/edit/<%= val %>" >Edit Filename</a>
