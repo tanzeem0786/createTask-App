@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
-const port = 3000;
+const port = 4000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,10 +25,10 @@ app.get('/edit/:filename', (req, res) => {
         res.render('edit', { filename: req.params.filename })
 })
 app.get('/delete/:filename', (req, res) => {
-    fs.unlink(`./files/${req.body.filename}`, (err) => {
+    fs.unlink(`./files/${req.params.filename}`, (err) => {
         if(err) throw err;        
+        res.redirect('/')
     })
-    res.redirect('/')
 })
 app.post('/edit', (req, res) => {
        fs.rename(`./files/${req.body.previous}`, `./files/${req.body.newname.split(' ').join('')}.txt`, (err) => {
