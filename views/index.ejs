@@ -14,7 +14,7 @@
             <form action="/create" method="post">
                 <input class="block w-full rounded-md outline-none px-5 py-2 bg-zinc-600 " type="text"
                     placeholder="Title goes Here" name="title">
-                <textarea class="block w-full rounded-md outline-none mt-2 px-5 py-2 resize-none bg-zinc-600 "
+                <textarea class="block h-30 w-full text-2xl rounded-md outline-none mt-3 px-5 py-2 resize-none bg-zinc-600 "
                     placeholder="Write Your Task Details" name="detail"></textarea>
                 <input class="p-1 mt-2 bg-blue-600 rounded-md w-30" type="submit" value="Create Task">
             </form>
@@ -32,8 +32,8 @@
                         </div>
                        
                         <div class="flex w-full justify-between items-center mt-3">
-                            <a class="text-blue-500" href="/file/<%=val %>">Read More.</a>
-                            <a  class="text-zinc-300" href="/edit/<%= val %>" >Edit Filename</a>
+                            <a class="text-blue-500 " href="/file/<%=val %>">Read More.</a>
+                            <a  class="text-zinc-300 ml-10" href="/edit/<%= val %>" >Edit Filename</a>
                         </div>
                     </div>
                     <% }) %>
